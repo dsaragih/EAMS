@@ -1,0 +1,15 @@
+_target_: models.networks.encoders.mesh_nonequivariant.MeshNonEquivariantEncoder
+# input_dim is overridden to the main encoder output_dim when
+# model.frame_averaging.energy_input_source=embedding.
+input_dim: ${resolve_feature_input_dim:${features},node_features}
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+face_input_dim: ${resolve_feature_input_dim:${features},face_features}
+width: 64
+width_mult:
+  - 1
+  - 1
+edge_state_dim: 16
+face_state_dim: 16
+pre_norm: true
+norm_type: graphnorm
+detect_nan: true

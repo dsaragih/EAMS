@@ -1,0 +1,18 @@
+condition_name: baseline
+pre_transforms:
+  - normalized_coords
+  - normals
+  - on_manifold_face_info
+  - face_adjacency
+  - face_adjacency_edge_index
+  - vertex_to_edge
+  - signature_spectrum
+train_transforms: 
+  - _target_: data.transforms.transforms.RandomRotateTranslateMesh
+  - _target_: data.transforms.transforms.MorphLabels
+    mode: dilate
+    label_kind: edge
+    iterations: 1
+    apply_prob: 0.5
+val_transforms: []
+test_transforms: []

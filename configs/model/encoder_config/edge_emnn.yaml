@@ -1,0 +1,24 @@
+_target_: models.networks.encoders.emnn.EMNN
+use_auxiliary_frame: true
+input_dim: ${resolve_emnn_feature_input_dim:${features},node_features,${.use_auxiliary_frame}}
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+width: 128
+width_mult:
+  - 1
+  - 1
+  - 1
+  - 1
+num_vector: ${resolve_emnn_num_vector:${features},2,${.use_auxiliary_frame}}
+hier: false
+virtual_global_node: false
+scale_updown: 1
+pre_norm: true
+use_radial_edge_embedding: false
+conv_attention: false
+conv_type: mesh_egnn
+normalize_coord_diff: false
+coord_update_tanh: false
+norm_type: stateless_batchnorm
+detect_nan: true
+thickness_scale: 3.0
+thickness_init: 1.0

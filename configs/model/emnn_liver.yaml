@@ -1,0 +1,27 @@
+# Model configuration (Lightning Module) with EMNN
+
+defaults:
+  - base.yaml
+  - _self_
+  - encoder_config: edge_emnn
+  - decoder_config: edge_emnn
+  - energy_encoder_config: none
+  - energy_decoder_config: none
+  - canonicalizer_encoder_config: none
+  - canonicalizer_decoder_config: none
+  - post_process: none
+  - loss_setup: liver_mesh_graph
+  - /metrics:
+    - iou
+    - dice
+    - chamfer
+    - hausdorff
+
+_target_: models.equiv_mesh_gnn_liver.EquivMeshGNNLiverClassifier
+
+# Loss wiring comes from the selected loss setup
+loss_dict: ${.loss_setup.loss_dict}
+loss_coefficients: ${.loss_setup.loss_coefficients}
+
+# Metrics
+metrics_dict: ${model.metrics}

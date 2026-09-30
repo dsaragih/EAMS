@@ -1,0 +1,8 @@
+# IntrA: vertex classification loss only (no embedding loss)
+
+loss_dict:
+  pred: ${losses.vertex_bdou}
+  embedding: null
+
+loss_coefficients:
+  pred: 1.0

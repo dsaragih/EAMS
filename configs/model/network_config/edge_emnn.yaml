@@ -1,0 +1,34 @@
+_target_: models.networks.encoder_decoder.EncoderDecoderNetwork
+encoder:
+  _target_: models.networks.encoders.emnn.EMNN
+  use_auxiliary_frame: true
+  input_dim: ${resolve_emnn_feature_input_dim:${features},node_features,${.use_auxiliary_frame}}
+  edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+  width: 32
+  width_mult:
+    - 1
+    - 2
+    - 4
+    - 8
+  num_vector: ${resolve_emnn_num_vector:${features},2,${.use_auxiliary_frame}}
+  hier: false
+  virtual_global_node: false
+  scale_updown: 1
+  norm_type: stateless_batchnorm
+  detect_nan: true
+  thickness_scale: 3.0
+  thickness_init: 1.0
+decoder:
+  _target_: models.networks.decoders.edge_position.EdgePositionDecoder
+  out_dim: ${data.nclasses}
+  output_level: edge
+  edge_aggregate: sum
+  msg_hidden_dims:
+    - 128
+    - 128
+  dist_hidden_dims:
+    - 128
+  dist_emb_dim: 16
+  activation: relu
+  dropout: 0.0
+  use_layernorm: true

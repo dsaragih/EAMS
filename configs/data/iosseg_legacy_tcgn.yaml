@@ -1,0 +1,17 @@
+# Data configuration for raw-Ply IOSSeg legacy TCGN parity
+_target_: data.iosseg_mesh_legacy_datamodule.IOSSegLegacyMeshDataModule
+
+splits_dir: splits/
+meshes_dir: all_data/
+
+batch_size: 8
+num_workers: 4
+serial_batches: false
+
+# Runtime transforms only. Any pre_transforms entry is ignored by this datamodule.
+transforms: ${transforms}
+
+nclasses: 17
+
+dataroot: ${paths.dataroot}/IOSSeg
+class_labels: ${.dataroot}/class_labels_legacy.txt

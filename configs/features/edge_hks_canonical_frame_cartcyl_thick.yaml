@@ -1,0 +1,4 @@
+defaults:
+  - edge_hks_canonical_frame_cartcyl.yaml
+others:
+  - thickness

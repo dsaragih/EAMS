@@ -1,0 +1,11 @@
+_target_: models.post_processing.GraphCutPostProcessor
+enabled: true
+run_on_validation: true
+run_on_test: true
+smoothness_weight: 1.0
+edge_smoothness_weight: 1.0
+geometry_weight: 0.0
+geometry_sigma: 1.0
+logit_temperature: 1.0
+include_background: true
+class_ids: null

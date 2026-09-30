@@ -1,0 +1,7 @@
+defaults:
+  - default_edge.yaml
+
+edge_features:
+  - anatomy_weight
+  - degree_weight
+  - dihedrals

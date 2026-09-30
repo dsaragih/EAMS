@@ -1,0 +1,4 @@
+defaults:
+  - edge_hks_curvature_signed_frame_cyl.yaml
+others:
+  - thickness

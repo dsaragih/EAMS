@@ -1,0 +1,29 @@
+# Data configuration
+_target_: data.lightning_datamodule.MeshDataModule
+
+# Dataset settings
+dataset_mode: segmentation  # Options: classification, segmentation
+
+# Data splits
+folds_dir: folds/
+
+# Data loading
+batch_size: 8
+num_workers: 4
+serial_batches: false  # Set to true for deterministic ordering
+
+# Data augmentation
+num_aug: 1
+scale_verts: true
+slide_verts: 0.0  # Percent of vertices to shift
+flip_edges: 0.0  # Percent of edges to flip
+
+# Dataset size limit
+max_dataset_size: .inf  # Use all available data
+
+nclasses: 3
+
+dataroot: ${paths.dataroot}/All_data  # Main data directory
+train_lossweight_dir: ${paths.train_lossweight_dir}  # Edge weights
+class_labels: ${.dataroot}/class_labels.txt
+transforms: ${transforms}

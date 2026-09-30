@@ -1,0 +1,11 @@
+condition_name: rotation_z_${.test_transforms.0.degrees}deg
+pre_transforms:
+  - normalized_coords
+  - normals
+  - on_manifold_face_info
+train_transforms: []
+val_transforms: []
+test_transforms:
+  - _target_: data.transforms.transforms.RotateMesh
+    degrees: 10.0
+    axis: z

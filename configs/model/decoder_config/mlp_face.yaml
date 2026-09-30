@@ -1,0 +1,13 @@
+_target_: models.networks.decoders.mlp.MLPVertexDecoder
+out_dim: ${data.nclasses}
+output_level: face
+face_source: auto
+face_reduce: mean
+hidden_dims:
+  - 128
+  - 128
+  - 128
+activation: silu
+dropout: 0.1
+norm_type: layernorm
+use_layernorm: true

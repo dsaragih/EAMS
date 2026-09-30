@@ -1,0 +1,8 @@
+# Optional PointTransformerV3 baseline; use CUDA-matched spconv wheels.
+addict==2.4.0
+timm==1.0.26
+spconv-cu120==2.3.6
+# flash-attn is optional; shipped PTv3 presets disable flash attention.
+# Optional online/offline W&B logging: wandb
+# Optional FEM signatures: lapy, scikit-sparse (SuiteSparse required)
+# Optional faster Chamfer metric: chamferdist (must match PyTorch ABI)

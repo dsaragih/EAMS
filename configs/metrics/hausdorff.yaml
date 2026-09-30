@@ -1,0 +1,2 @@
+hausdorff:
+  _target_: util.metrics.HausdorffDistance

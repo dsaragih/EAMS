@@ -1,0 +1,12 @@
+condition_name: noise_std_${.test_transforms.0.std}
+pre_transforms:
+  - normalized_coords
+  - normals
+  - on_manifold_face_info
+train_transforms: []
+val_transforms: []
+test_transforms:
+  - _target_: data.transforms.transforms.AddGaussianNoise
+    std: 0.01
+    mean: 0.0
+    seed: 2024

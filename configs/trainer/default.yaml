@@ -1,0 +1,35 @@
+# Trainer configuration
+# _target_: pytorch_lightning.Trainer
+
+# Training duration
+max_epochs: 200  # niter + niter_decay (20 + 100)
+
+# Hardware
+accelerator: gpu
+devices: [0]
+precision: 32
+
+# Checkpointing
+enable_checkpointing: true
+default_root_dir: ${paths.checkpoints_dir}
+
+# Logging
+log_every_n_steps: 10
+enable_progress_bar: true
+
+# Validation
+check_val_every_n_epoch: 5
+val_check_interval: 1.0
+
+# Debugging (set to true for fast iteration)
+fast_dev_run: false
+limit_train_batches: 1.0
+limit_val_batches: 1.0
+limit_test_batches: 1.0
+
+# Gradient clipping 
+gradient_clip_val: 1.0
+
+# Determinism
+deterministic: false
+benchmark: true

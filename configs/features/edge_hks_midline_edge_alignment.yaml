@@ -1,0 +1,14 @@
+_target_: data.features.factory.FeatureFactory
+node_features:
+  - pointwise_area
+  - hks
+  - distance_to_bbox_mid_sagittal_plane
+  - bbox_vertical_position
+edge_features:
+  - degree_weight
+  - copy_weight
+  - dihedrals
+  - edge_vertical_alignment
+  - edge_midline_proximity
+face_features:
+others:

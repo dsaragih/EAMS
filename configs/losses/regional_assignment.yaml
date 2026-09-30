@@ -1,0 +1,4 @@
+_target_: util.losses.RegionalAssignmentLoss
+diversity_weight: 1.0
+equipartition_weight: 1.0
+eps: 1e-8

@@ -1,0 +1,7 @@
+loss_dict:
+  pred: ${losses.vertex_graph_cut}
+  embedding: ${losses.contrastive_boundary}
+
+loss_coefficients:
+  pred: 1.0
+  embedding: 1.0

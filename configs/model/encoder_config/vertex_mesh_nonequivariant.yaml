@@ -1,0 +1,15 @@
+_target_: models.networks.encoders.mesh_nonequivariant.MeshNonEquivariantEncoder
+input_dim: ${resolve_feature_input_dim:${features},node_features}
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+face_input_dim: 0
+width: 128
+width_mult:
+  - 1
+  - 1
+  - 1
+  - 1
+edge_state_dim: 32
+face_state_dim: 32
+pre_norm: true
+norm_type: graphnorm
+detect_nan: true

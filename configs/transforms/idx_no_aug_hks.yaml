@@ -1,0 +1,12 @@
+condition_name: baseline
+pre_transforms:
+  - normalized_coords
+  - normals
+  - on_manifold_face_info
+  - face_adjacency
+  - face_adjacency_edge_index
+  - vertex_to_edge
+  - signature_spectrum
+train_transforms: []
+val_transforms: []
+test_transforms: []

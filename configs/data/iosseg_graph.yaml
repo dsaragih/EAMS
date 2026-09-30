@@ -1,0 +1,29 @@
+# Data configuration
+_target_: data.iosseg_mesh_datamodule.IOSSegMeshDataModule
+
+# Data splits
+splits_dir: splits/
+
+# Mesh directory (contains .ply files)
+meshes_dir: all_data/
+
+# Data loading
+batch_size: 8
+num_workers: 4
+serial_batches: false
+
+# Aug, Features, pre-transforms
+transforms: ${transforms}
+
+nclasses: 17
+# Ignore T18/38 and T28/48 supervision in all stages without changing the model head.
+exclude_sparse_molars: false
+
+# Dataset root
+# Expected structure:
+#   ${dataroot}/${meshes_dir}/*.ply
+#   ${dataroot}/${splits_dir}/{train_ids,val_ids,test_ids}.txt
+dataroot: ${paths.dataroot}/IOSSeg
+class_labels: ${.dataroot}/class_labels.txt
+
+processed_dir: ${.dataroot}/processed_all

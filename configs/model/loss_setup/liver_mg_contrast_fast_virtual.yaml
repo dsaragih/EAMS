@@ -1,0 +1,17 @@
+# Liver: edge boundary DoU + embedding contrastive loss + FastEGNN-style virtual-node MMD
+
+loss_dict:
+  pred: 
+    _target_: util.losses.MeshGraphCNNLoss
+    label_smoothing: 0.0
+    label_weights:
+      - 1.0
+      - 10.0
+      - 10.0
+  embedding: ${losses.contrastive_boundary}
+  virtual_node_coords: ${losses.virtual_node_mmd}
+
+loss_coefficients:
+  pred: 1.0
+  embedding: 1.0
+  virtual_node_coords: 0.1

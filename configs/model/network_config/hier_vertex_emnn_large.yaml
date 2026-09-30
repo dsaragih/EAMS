@@ -1,0 +1,15 @@
+defaults:
+  - vertex_emnn.yaml
+
+encoder:
+  hier: true
+  scale_updown: 2
+  num_pooling_layers: 3
+  width: 128
+  width_mult:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1

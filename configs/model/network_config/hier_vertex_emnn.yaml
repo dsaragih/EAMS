@@ -1,0 +1,7 @@
+defaults:
+  - vertex_emnn.yaml
+
+encoder:
+  hier: true
+  scale_updown: 2
+  num_pooling_layers: 2

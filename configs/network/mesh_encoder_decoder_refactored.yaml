@@ -1,0 +1,31 @@
+# Refactored MeshEncoderDecoder Network Configuration
+# This network uses the refactored implementation from models/networks_refactored.py
+# Features: Named constants, English documentation, cleaner code structure
+
+_target_: models.networks.networks_refactored.MeshEncoderDecoderRefactored
+
+# Network architecture configuration
+# These parameters define the multi-resolution structure
+
+# Pooling resolutions at each stage
+# [high_res, pool1, pool2, pool3]
+pools: [22000, 3200, 1600, 800]
+
+# Downsampling convolution channels
+# [input_nc] + ncf = [5, 16, 32, 64, 128, 128]
+down_convs: [5, 16, 32, 64, 128, 128]
+
+# Upsampling convolution channels  
+# ncf[::-1] + [nclasses] = [128, 128, 64, 32, 16, 3]
+up_convs: [128, 128, 64, 32, 16, 3]
+
+# Number of residual blocks in each stage
+blocks: 2
+
+# Whether to transfer data between stages
+transfer_data: true
+
+# DGCNN checkpoint path
+# Set this to the actual path of your pretrained DGCNN weights
+# Optional pretrained DGCNN checkpoint, supplied through paths.dgcnn_checkpoint.
+dgcnn_checkpoint_path: ${paths.dgcnn_checkpoint}

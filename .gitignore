@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+mesh-venv/
+.env
+wandb/
+experiments/
+checkpoints/
+results/
+*.ckpt
+*.pt
+*.pkl
+*.out
+# Only released split metadata belongs in datasets/.
+datasets/**
+!datasets/**/
+!datasets/**/class_labels*.txt
+!datasets/**/train*.txt
+!datasets/**/val*.txt
+!datasets/**/test*_ids.txt
+!datasets/All_data/folds/test.txt

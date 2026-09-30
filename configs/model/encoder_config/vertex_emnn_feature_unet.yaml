@@ -1,0 +1,45 @@
+_target_: models.networks.encoders.emnn_feature_unet.EMNNFeatureUNet
+use_auxiliary_frame: true
+input_dim: ${resolve_emnn_feature_input_dim:${features},node_features,${.use_auxiliary_frame}}
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+width: 16
+width_mult:
+  - 1
+  - 2
+  - 4
+  - 8
+tier_layer_count: 1
+pool_layers_per_tier: 1
+num_vector: ${resolve_emnn_num_vector:${features},2,${.use_auxiliary_frame}}
+pool_ratios:
+  - 0.5
+  - 0.25
+  - 0.125
+pool_radii:
+  - 0.15
+  - 0.3
+  - 0.45
+unpool_ks:
+  - 3
+  - 3
+  - 3
+coarse_radii:
+  - 0.15
+  - 0.3
+  - 0.45
+use_feature_scores: true
+pool_max_num_neighbors: 64
+pool_random_start: true
+coarse_max_num_neighbors: 64
+coarse_block_dropout: 0.0
+virtual_global_node: false
+detect_nan: true
+thickness_scale: 3.0
+thickness_init: 1.0
+pooling_aggr: max
+pre_norm: true
+use_radial_edge_embedding: true
+conv_attention: false
+normalize_coord_diff: false
+coord_update_tanh: false
+norm_type: stateless_batchnorm

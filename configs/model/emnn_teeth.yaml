@@ -1,0 +1,26 @@
+# Model configuration (Lightning Module) with EMNN
+
+defaults:
+  - base.yaml
+  - _self_
+  - encoder_config: vertex_emnn
+  - decoder_config: face_emnn
+  - energy_encoder_config: none
+  - energy_decoder_config: none
+  - canonicalizer_encoder_config: none
+  - canonicalizer_decoder_config: none
+  - post_process: none
+  - loss_setup: teeth_fbdou_contrastive # looks at losses/default.yaml
+  - /metrics:
+    - iou
+
+_target_: models.equiv_mesh_gnn_teeth.EquivMeshGNNTeethClassifier
+
+# Loss wiring comes from the selected loss setup
+loss_dict: ${.loss_setup.loss_dict}
+loss_coefficients: ${.loss_setup.loss_coefficients}
+output_embedding_key: node_embedding
+face_pool: mean
+
+# Metrics
+metrics_dict: ${model.metrics}

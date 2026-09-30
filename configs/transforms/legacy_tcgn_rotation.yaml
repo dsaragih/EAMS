@@ -1,0 +1,9 @@
+defaults:
+  - idx_no_aug_hks
+  - _self_
+
+condition_name: legacy_tcgn_rotation
+train_transforms:
+  - _target_: data.transforms.transforms.RandomTCGNRotationMesh
+val_transforms: []
+test_transforms: []

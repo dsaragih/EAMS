@@ -1,0 +1,15 @@
+defaults:
+  - edge_virtual_emnn.yaml
+
+regional_end_stage_mode: pooled_context_fusion
+regional_context_pool_ratio: 0.25
+regional_context_pool_radius: 0.2
+regional_context_pool_aggr: mean
+regional_context_max_num_neighbors: 64
+regional_context_random_start: false
+regional_context_use_feature_scores: true
+regional_context_dim: 128
+regional_context_num_blocks: 1
+regional_context_fusion: gated
+regional_context_lift_k: 3
+regional_context_fusion_dropout: 0.0

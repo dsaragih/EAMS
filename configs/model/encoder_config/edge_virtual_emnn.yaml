@@ -1,0 +1,16 @@
+defaults:
+  - regional_virtual_emnn_base.yaml
+
+num_regional_virtual_nodes: 32
+regional_assignment_hidden_dim: 128
+regional_attention_dropout: 0.2
+width: 128
+width_mult:
+  - 1
+  - 1
+  - 1
+  - 1
+use_radial_edge_embedding: true
+regional_residual_weight: 1.0
+virtual_global_node: true
+conv_attention: true

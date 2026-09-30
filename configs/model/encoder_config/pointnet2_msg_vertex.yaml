@@ -1,0 +1,51 @@
+_target_: models.networks.encoders.pointnet2_msg.PointNet2MSGVertexEncoder
+input_dim: ${resolve_emnn_feature_input_dim:${features},node_features}
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+
+# Match the standalone PointNet++ part-seg baseline by default.
+use_node_features: false
+use_normals: true
+num_object_classes: 1
+object_class_index: 0
+
+sa1_npoint: 512
+sa1_radius_list:
+  - 0.1
+  - 0.2
+  - 0.4
+sa1_nsample_list:
+  - 32
+  - 64
+  - 128
+sa1_mlp_list:
+  - [32, 32, 64]
+  - [64, 64, 128]
+  - [64, 96, 128]
+
+sa2_npoint: 128
+sa2_radius_list:
+  - 0.4
+  - 0.8
+sa2_nsample_list:
+  - 64
+  - 128
+sa2_mlp_list:
+  - [128, 128, 256]
+  - [128, 196, 256]
+
+sa3_mlp:
+  - 256
+  - 512
+  - 1024
+
+fp3_mlp:
+  - 256
+  - 256
+fp2_mlp:
+  - 256
+  - 128
+fp1_mlp:
+  - 128
+  - 128
+
+detect_nan: true

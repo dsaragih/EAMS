@@ -1,0 +1,8 @@
+# Liver: MeshGraphCNN loss on pred output only
+
+loss_dict:
+  pred: ${losses.mesh_graph}
+  embedding: null
+
+loss_coefficients:
+  pred: 1.0

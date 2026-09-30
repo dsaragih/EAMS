@@ -1,0 +1,6 @@
+_target_: models.networks.encoders.dgcnn.DGCNNEncoder
+input_dim: 0
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+k: 32
+emb_dims: 256
+detect_nan: true

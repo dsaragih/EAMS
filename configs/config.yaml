@@ -1,0 +1,28 @@
+# Default configuration for MeshGraphCNN
+defaults:
+  - paths: default
+  - robustness_eval: none
+  - losses: default
+  - transforms: default
+  - features: default_edge
+  - model: mesh_encoder_decoder_refactored
+  - data: liver_mesh
+  - trainer: default
+  - logger: tensorboard
+  - _self_
+
+# Experiment settings
+seed: 2024
+matmul_precision: high
+k_folds: 1
+
+# Debug mode (fast iteration for development)
+# When true: disables checkpoints, logging, reduces data workers
+debug: false
+checkpoint_path: null
+experiment_dir: null
+
+# Override settings
+hydra:
+  run:
+    dir: ${paths.write_dir_prefix}/outputs

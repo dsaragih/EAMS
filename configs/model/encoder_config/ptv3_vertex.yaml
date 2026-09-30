@@ -1,0 +1,90 @@
+_target_: models.networks.encoders.point_transformer_v3.PointTransformerV3Encoder
+input_dim: ${resolve_emnn_feature_input_dim:${features},node_features}
+edges_input_dim: ${resolve_emnn_feature_input_dim:${features},edge_features}
+
+# Match the sampled pointcloud baselines by default.
+use_node_features: false
+use_normals: true
+
+# Point cloud samples are normalized to roughly unit scale, so PTv3 needs a coarser
+# voxel size and smaller patch window than the raw-scene defaults.
+grid_size: 0.01 # 0.04
+patch_size: 1024 # 128
+
+order:
+  - z
+  - z-trans
+  - hilbert
+  - hilbert-trans
+
+stride:
+  - 2
+  - 2
+  - 2
+  - 1
+
+enc_depths:
+  - 1
+  - 1
+  - 1
+  - 2
+  - 2
+
+enc_channels:
+  - 128
+  - 128
+  - 128
+  - 256
+  - 512
+
+enc_num_head:
+  - 4
+  - 8
+  - 8
+  - 16
+  - 32
+
+enc_patch_size:
+  - ${..patch_size}
+  - ${..patch_size}
+  - ${..patch_size}
+  - ${..patch_size}
+  - ${..patch_size}
+
+dec_depths:
+  - 1
+  - 1
+  - 1
+  - 1
+
+dec_channels:
+  - 128
+  - 128
+  - 256
+  - 256
+
+dec_num_head:
+  - 4
+  - 4
+  - 8
+  - 16
+
+dec_patch_size:
+  - ${..patch_size}
+  - ${..patch_size}
+  - ${..patch_size}
+  - ${..patch_size}
+
+mlp_ratio: 2.0
+qkv_bias: true
+attn_drop: 0.1
+proj_drop: 0.0
+drop_path: 0.1
+pre_norm: true
+shuffle_orders: true
+enable_rpe: true
+enable_flash: false
+upcast_attention: true
+upcast_softmax: true
+cls_mode: false
+detect_nan: true

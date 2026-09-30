@@ -1,0 +1,12 @@
+_target_: models.networks.decoders.graph_energy.GraphEnergyDecoder
+out_dim: 1
+output_level: graph
+hidden_dims:
+  - 64
+  - 64
+dropout: 0.0
+activation: silu
+norm_type: layernorm
+use_layernorm: false
+use_bias: true
+pool_reduce: max

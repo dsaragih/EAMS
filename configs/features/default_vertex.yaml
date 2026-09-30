@@ -1,0 +1,8 @@
+_target_: data.features.factory.FeatureFactory
+node_features:
+  - pointwise_area
+edge_features:
+  - degree_weight
+  - copy_weight
+face_features:
+others:

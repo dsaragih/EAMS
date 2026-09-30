@@ -1,0 +1,13 @@
+defaults:
+  - vertex_emnn_feature_unet.yaml
+
+width_mult:
+  - 1
+  - 2
+  - 4
+  - 8
+pre_norm: true
+use_radial_edge_embedding: false
+conv_attention: false
+normalize_coord_diff: false
+coord_update_tanh: false

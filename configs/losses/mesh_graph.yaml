@@ -1,0 +1,6 @@
+_target_: util.losses.MeshGraphCNNLoss
+label_smoothing: 0.0
+label_weights:
+  - 1.0
+  - 10.0
+  - 10.0

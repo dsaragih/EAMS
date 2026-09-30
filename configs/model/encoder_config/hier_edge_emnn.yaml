@@ -1,0 +1,6 @@
+defaults:
+  - edge_emnn.yaml
+
+hier: true
+scale_updown: 2
+num_pooling_layers: 2

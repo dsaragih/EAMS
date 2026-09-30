@@ -1,0 +1,11 @@
+defaults:
+  - fast_virtual_emnn_base.yaml
+
+width: 128
+width_mult:
+  - 1
+  - 1
+  - 1
+  - 1
+virtual_global_node: true
+conv_attention: true

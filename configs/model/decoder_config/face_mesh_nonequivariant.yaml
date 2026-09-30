@@ -1,0 +1,11 @@
+_target_: models.networks.decoders.mesh_nonequivariant.MeshNonEquivariantDecoder
+out_dim: ${data.nclasses}
+output_level: face
+hidden_dims:
+  - 128
+  - 128
+  - 128
+dropout: 0.1
+activation: silu
+norm_type: graphnorm
+use_layernorm: false

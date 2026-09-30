@@ -1,0 +1,12 @@
+_target_: models.networks.decoders.graph_mlp.GraphMLPDecoder
+out_dim: ${data.nclasses}
+output_level: graph
+hidden_dims:
+  - 128
+  - 128
+dropout: 0.5
+activation: silu
+norm_type: batchnorm1d
+use_layernorm: false
+use_bias: true
+apply_log_softmax: false

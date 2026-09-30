@@ -1,0 +1,2 @@
+_target_: util.losses.DiceLoss
+smooth: 1e-6

@@ -1,0 +1,109 @@
+bdou:
+  _target_: util.losses.BoundaryDoULoss
+  label_smoothing: 0.0
+  label_weights:
+    - 1.0
+    - 10.0
+    - 10.0
+  ce_scalar: 3.0
+
+contrastive_boundary:
+  _target_: util.losses.ContrastiveBoundaryLoss
+  k: 8
+  eps: 1e-8
+
+regional_assignment:
+  _target_: util.losses.RegionalAssignmentLoss
+  diversity_weight: 1.0
+  equipartition_weight: 1.0
+  eps: 1e-8
+
+virtual_node_mmd:
+  _target_: util.losses.VirtualNodeMMDLoss
+  sigma: 1.0
+  sample_size: 128
+  vv_weight: 1.0
+  rv_weight: 2.0
+  eps: 1e-8
+
+latent_coordinate_regularization:
+  _target_: util.losses.LatentCoordinateRegularizationLoss
+  displacement_weight: 1.0
+  edge_distortion_weight: 1.0
+  face_area_weight: 1.0
+  eps: 1e-8
+
+dice_loss:
+  _target_: util.losses.DiceLoss
+  smooth: 1e-6
+
+graph_cut:
+  _target_: util.losses.GraphCutLoss
+  label_smoothing: 0.0
+  label_weights:
+    - 1.0
+    - 10.0
+    - 10.0
+  ce_scalar: 1.0
+
+graph_cut_aw:
+  _target_: util.losses.GraphCutLoss
+  label_smoothing: 0.0
+  label_weights:
+    - 1.0
+    - 10.0
+    - 10.0
+  ce_scalar: 1.0
+  angle_weights: true
+
+edge_local_continuity:
+  _target_: util.losses.EdgeLocalContinuityLoss
+  distance: js # {tv, js}
+  eps: 1e-8
+
+mesh_graph:
+  _target_: util.losses.MeshGraphCNNLoss
+  label_smoothing: 0.0
+  label_weights:
+    - 1.0
+    - 10.0
+    - 10.0
+    
+
+none: {}
+
+vertex_bdou:
+  _target_: util.losses.VertexBoundaryDoULoss
+  label_smoothing: 0.0
+  label_weights: 
+    - 1.0
+    - 5.0
+  ce_scalar: 3.0
+  alpha_max: 0.8
+  smooth: 1e-6
+
+face_bdou:
+  _target_: util.losses.FaceBoundaryDoULoss
+  label_smoothing: 0.0
+  label_weights:
+    - 1.0
+    - 5.0
+  ce_scalar: 3.0
+  alpha_max: 0.8
+  smooth: 1e-6
+
+vertex_graph_cut:
+  _target_: util.losses.VertexGraphCutLoss
+  label_smoothing: 0.0
+  label_weights: 
+    - 1.0
+    - 5.0
+  ce_scalar: 3.0
+
+face_graph_cut:
+  _target_: util.losses.FaceGraphCutLoss
+  label_smoothing: 0.0
+  label_weights:
+    - 1.0
+    - 5.0
+  ce_scalar: 3.0

@@ -1,0 +1,12 @@
+_target_: models.networks.decoders.graph_rotation.GraphRotationDecoder
+out_dim: 9
+output_level: graph
+hidden_dims:
+  - 64
+  - 64
+dropout: 0.0
+activation: silu
+norm_type: layernorm
+use_layernorm: false
+use_bias: true
+pool_reduce: max

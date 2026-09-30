@@ -1,0 +1,18 @@
+# Liver: edge boundary DoU + embedding contrastive loss
+
+loss_dict:
+  pred:
+    _target_: util.losses.BoundaryDoULoss
+    label_smoothing: 0.0
+    label_weights:
+      - 1.0
+      - 10.0
+      - 4.0
+    ce_scalar: 3.0
+    alpha_max: 0.8
+    smooth: 1e-6
+  embedding: ${losses.contrastive_boundary}
+
+loss_coefficients:
+  pred: 1.0
+  embedding: 1.0

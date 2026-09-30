@@ -1,0 +1,4 @@
+defaults:
+  - vertex_background_cheat.yaml
+others:
+  - thickness

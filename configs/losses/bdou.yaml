@@ -1,0 +1,7 @@
+_target_: util.losses.BoundaryDoULoss
+label_smoothing: 0.0
+label_weights:
+  - 1.0
+  - 10.0
+  - 10.0
+ce_scalar: 3.0

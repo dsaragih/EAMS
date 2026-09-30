@@ -1,0 +1,30 @@
+# Teeth: vertex boundary DoU + embedding contrastive loss
+
+loss_dict:
+  pred: 
+    _target_: util.losses.VertexGraphCutLoss
+    label_smoothing: 0.0
+    label_weights: 
+      - 0.1 # 0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 10.0 # 8
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 10.0 # 16
+    ce_scalar: 3.0
+  embedding: ${losses.contrastive_boundary}
+
+loss_coefficients:
+  pred: 1.0
+  embedding: 1.0

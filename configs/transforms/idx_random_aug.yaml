@@ -1,0 +1,13 @@
+condition_name: baseline
+pre_transforms:
+  - normalized_coords
+  - normals
+  - on_manifold_face_info
+  - face_adjacency
+  - face_adjacency_edge_index
+  - vertex_to_edge
+train_transforms:
+  - _target_: data.transforms.transforms.RandomSlideVertices
+    rate: 0.2
+val_transforms: []
+test_transforms: []

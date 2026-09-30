@@ -1,0 +1,5 @@
+_target_: data.features.factory.FeatureFactory
+node_features: []
+edge_features: []
+face_features: []
+others: []

@@ -1,0 +1,12 @@
+# Main environment knob: directory containing datasets/ and experiments/.
+dir_prefix: ${oc.env:EAMS_ROOT,.}
+dataroot: ${.dir_prefix}/datasets
+train_lossweight_dir: ${.dataroot}/All_data/edge_weights
+dgcnn_checkpoint: null
+experiment_name: eams-${now:%Y-%m-%d_%H-%M-%S}
+write_dir_middle: experiments
+write_dir_prefix: ${.dir_prefix}/${.write_dir_middle}/${.experiment_name}
+checkpoints_dir: ${.write_dir_prefix}/checkpoints
+results_dir: ${.write_dir_prefix}/results
+export_folder: ""
+logging_dir: ${.write_dir_prefix}/logs

@@ -1,0 +1,17 @@
+_target_: data.features.factory.FeatureFactory
+node_features:
+  - pointwise_area
+  - hks
+  # - wave_signature
+  - canonical_frame_cylindrical
+  - canonical_frame_cartesian
+  # - spectral_coordinates
+  - com_fps_anchor_distances
+edge_features:
+  - degree_weight
+  - copy_weight
+  - dihedrals
+  # - signed_dihedrals
+  # - chiral_edge_volume
+face_features:
+others:

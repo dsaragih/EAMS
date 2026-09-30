@@ -1,0 +1,23 @@
+
+# Data configuration
+_target_: data.liver_mesh_datamodule.LiverMeshDataModule
+
+# Data splits
+folds_dir: folds/
+
+# Data loading
+batch_size: 8
+num_workers: 4
+serial_batches: false  # Set to true for deterministic ordering
+
+# Aug, Features, pre-transforms
+transforms: ${transforms}
+
+nclasses: 3
+
+dataroot: ${paths.dataroot}/All_data  # Main data directory
+train_lossweight_dir: ${paths.train_lossweight_dir}  # Edge weights
+class_labels: ${.dataroot}/class_labels.txt
+
+processed_dir: ${.dataroot}/processed_liver_spect
+# processed_dir: ${.dataroot}/processed_liver_unnorm

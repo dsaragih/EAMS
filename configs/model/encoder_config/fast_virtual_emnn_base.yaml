@@ -1,0 +1,30 @@
+_target_: models.networks.encoders.emnn_fast_virtual_nodes.EMNNFastVirtualNodes
+use_auxiliary_frame: true
+input_dim: ${resolve_emnn_feature_input_dim:${features},node_features,${.use_auxiliary_frame}}
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+width: 32
+width_mult:
+  - 1
+  - 2
+  - 4
+  - 4
+num_vector: ${resolve_emnn_num_vector:${features},2,${.use_auxiliary_frame}}
+hier: false
+virtual_global_node: false
+scale_updown: 1
+pre_norm: true
+use_radial_edge_embedding: true
+conv_attention: false
+normalize_coord_diff: false
+coord_update_tanh: false
+norm_type: stateless_batchnorm
+detect_nan: true
+thickness_scale: 3.0
+thickness_init: 1.0
+num_fast_virtual_nodes: 16
+fast_virtual_dropout: 0.0
+fast_virtual_residual_weight: 1.0
+fast_virtual_learnable_residual_weight: false
+fast_virtual_only_last_layer: false
+fast_virtual_eps: 1e-8
+fast_virtual_end_stage_mode: flat

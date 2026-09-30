@@ -1,0 +1,44 @@
+# Data configuration
+_target_: data.intra_mesh_datamodule.IntrAMeshDataModule
+
+# Data splits (k-fold)
+folds_dir: folds/
+current_fold: 0  # 0-based (0..k_folds-1)
+
+# Data loading
+batch_size: 8
+num_workers: 4
+serial_batches: false  # Set to true for deterministic ordering
+
+# Aug, Features, pre-transforms
+transforms: ${transforms}
+
+# Task
+nclasses: 2
+class_labels: ${.dataroot}/class_labels.txt
+
+# Dataset root (no hardcoding; set via paths.dir_prefix)
+dataroot: ${paths.dataroot}/aneurysm_seg
+
+# IntrA folder layout
+# Prefer explicit roots so .gd can live outside the annotated folder.
+annotated_dir: intra/IntrA/annotated
+obj_root: ${.dataroot}/${.annotated_dir}/obj
+label_root: ${.dataroot}/${.annotated_dir}/ad
+gd_root: ${.dataroot}/geo/geo
+
+# Filename patterns for a mesh id like 'AN1'
+obj_suffix: _full.obj
+label_suffix: -_norm.ad
+gd_suffix: _full.gd
+
+# Optional edge weights from geodesic distance matrices
+use_geodesic_edge_weight: true
+
+# Label handling (dataset often has labels {0,1,2}; merge 2 -> 1 for binary)
+merge_label_2_to_1: true
+
+# Fallback to original IntrA split files if folds txts are missing
+splits_subdir: splits/seg
+split_prefix: annSplit_
+k_folds: 5

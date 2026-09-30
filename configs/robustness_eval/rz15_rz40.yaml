@@ -1,0 +1,14 @@
+defaults:
+  - base.yaml
+  
+variants:
+  - condition_name: rotation_z_15deg
+    test_transforms:
+      - _target_: data.transforms.transforms.RotateMesh
+        degrees: 15.0
+        axis: z
+  - condition_name: rotation_z_40deg
+    test_transforms:
+      - _target_: data.transforms.transforms.RotateMesh
+        degrees: 40.0
+        axis: z

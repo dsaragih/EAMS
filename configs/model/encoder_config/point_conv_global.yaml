@@ -1,0 +1,25 @@
+_target_: models.networks.encoders.point_conv.PointConvEncoder
+input_dim: ${resolve_emnn_feature_input_dim:${features},node_features}
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+use_node_features: true
+use_normals: true
+sa1_npoint: 512
+sa1_nsample: 32
+sa1_mlp:
+  - 64
+  - 64
+  - 128
+sa1_bandwidth: 0.1
+sa2_npoint: 128
+sa2_nsample: 64
+sa2_mlp:
+  - 128
+  - 128
+  - 256
+sa2_bandwidth: 0.2
+sa3_mlp:
+  - 256
+  - 512
+  - 1024
+sa3_bandwidth: 0.4
+detect_nan: true

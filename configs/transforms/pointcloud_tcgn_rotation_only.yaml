@@ -1,0 +1,18 @@
+defaults:
+  - pointcloud_baseline
+  - _self_
+
+condition_name: pointcloud_tcgn_rotation
+train_transforms:
+  - _target_: data.transforms.transforms.RandomTCGNRotationMesh
+  - _target_: data.transforms.transforms.PointCloudSample
+    n_points: ${...n_points}
+    sample_mode_train: random
+    sample_mode_eval: random
+    sample_with_replacement_train: true
+    sample_with_replacement_eval: true
+    normalize: ${...normalize}
+    scale_low: 1.0
+    scale_high: 1.0
+    shift_range: 0.0
+    include_normals: true

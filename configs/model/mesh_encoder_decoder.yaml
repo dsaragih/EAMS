@@ -1,0 +1,37 @@
+# Model configuration (Lightning Module)
+_target_: models.mesh_graph_cnn.MeshClassifierLightning
+
+# Network configuration
+# Use 'network' or 'network_config' (one of them, not both)
+# Option 1: Pass network config for Hydra instantiation
+network_config:
+  _target_: models.networks.networks.MeshEncoderDecoder
+  pools: [22000, 3200, 1600, 800]
+  down_convs: [5, 16, 32, 64, 128, 128]
+  up_convs: [128, 128, 64, 32, 16, 3]
+  blocks: 2
+  transfer_data: true
+  dgcnn_checkpoint_path: null
+
+# Option 2: Alternatively, use defaults/network to select from network configs
+# defaults:
+#   - /network: mesh_encoder_decoder  # or mesh_encoder_decoder_refactored
+
+# Optimizer
+lr: 0.01
+beta1: 0.9
+
+# Learning rate scheduler
+lr_policy: lambda  # Options: lambda, step, plateau
+lr_decay_iters: 50
+niter: 100
+niter_decay: 500
+
+# Loss weights (for multi-scale supervision)
+loss_weight_main: 1.0
+loss_weight_dilation: 1.0
+loss_weight_erosion: 1.0
+
+# Paths
+train_lossweight_dir: ${data.train_lossweight_dir}
+results_dir: ${paths.results_dir}

@@ -1,0 +1,11 @@
+defaults:
+  - edge_hks_canonical_frame_cartcyl.yaml
+
+edge_features:
+  - degree_weight
+  - copy_weight
+  - dihedrals
+  - signed_dihedrals
+  - chiral_edge_volume
+others:
+  - thickness

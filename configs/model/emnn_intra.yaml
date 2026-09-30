@@ -1,0 +1,25 @@
+# Model configuration (Lightning Module) with EMNN
+
+defaults:
+  - base.yaml
+  - _self_
+  - encoder_config: vertex_emnn
+  - decoder_config: vertex_emnn
+  - energy_encoder_config: none
+  - energy_decoder_config: none
+  - canonicalizer_encoder_config: none
+  - canonicalizer_decoder_config: none
+  - post_process: none
+  - loss_setup: intra_vbdou_contrastive
+  - /metrics:
+    - iou
+    - dice
+
+_target_: models.equiv_mesh_gnn_intra.EquivMeshGNNIntraClassifier
+
+# Loss wiring comes from the selected loss setup
+loss_dict: ${.loss_setup.loss_dict}
+loss_coefficients: ${.loss_setup.loss_coefficients}
+
+# Metrics
+metrics_dict: ${model.metrics}

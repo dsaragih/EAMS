@@ -1,0 +1,24 @@
+defaults:
+  - base.yaml
+  
+variants:
+  - condition_name: rotation_z_15deg
+    test_transforms:
+      - _target_: data.transforms.transforms.RotateMesh
+        degrees: 15.0
+        axis: z
+  - condition_name: rotation_z_40deg
+    test_transforms:
+      - _target_: data.transforms.transforms.RotateMesh
+        degrees: 40.0
+        axis: z
+  - condition_name: reflect_x
+    test_transforms:
+      - _target_: data.transforms.transforms.ReflectMesh
+        axis: x
+  # - condition_name: noise_std_0.01
+  #   test_transforms:
+  #     - _target_: data.transforms.transforms.AddGaussianNoise
+  #       std: 0.01
+  #       mean: 0.0
+  #       seed: 2024

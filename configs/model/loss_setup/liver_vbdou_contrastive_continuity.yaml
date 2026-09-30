@@ -1,0 +1,20 @@
+# Liver: edge boundary DoU + embedding contrastive loss + local continuity regularizer
+
+loss_dict:
+  pred:
+    _target_: util.losses.BoundaryDoULoss
+    label_smoothing: 0.0
+    label_weights:
+      - 1.0
+      - 10.0
+      - 4.0
+    ce_scalar: 3.0
+    alpha_max: 0.8
+    smooth: 1e-6
+  embedding: ${losses.contrastive_boundary}
+  continuity: ${losses.edge_local_continuity}
+
+loss_coefficients:
+  pred: 1.0
+  embedding: 1.0
+  continuity: 5.0

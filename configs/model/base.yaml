@@ -1,0 +1,123 @@
+features: ${features}
+# Losses
+batched_input: false
+
+# Optimizer
+lr: 0.0004
+beta1: 0.9
+weight_decay: 0.01
+optimizer_name: adamw
+
+# Learning rate scheduler
+lr_policy: lambda  # Options: lambda, step, plateau
+lr_decay_iters: 40
+lr_step_gamma: 0.1
+niter: 40
+niter_decay: 160
+plateau_factor: 0.6
+plateau_threshold: 0.01
+plateau_patience: 2
+min_lr: 1.0e-5
+
+# Paths
+train_lossweight_dir: null
+results_dir: ${paths.results_dir}
+save_pt_results: true
+classes: ${data.class_labels}
+# Rotation consistency regularization for non-equivariant experiments.
+equivariance_regularization:
+  enabled: false
+  transform:
+    type: random_rotation
+    degrees:
+      - -180.0
+      - 180.0
+    axis: random
+  compare_key: pred
+  transformed_supervision_weight: 1.0
+  consistency_weight: 0.0
+
+# PCA frame averaging over signed O(3) or proper SO(3) PCA frames.
+frame_averaging:
+  enabled: false
+  collapse_level: output
+  weighting_mode: uniform
+  tau: 1.0
+  temperature_annealing:
+    enabled: false
+    initial_tau: 2.0
+    final_tau: 0.5
+  energy_input_source: framed_batch
+  include_pca_frames: true
+  pca_frame_group: o3
+  include_identity_frame: false
+  num_random_frames: 0
+  auxiliary_loss_mode: stochastic_per_graph
+  energy_training:
+    enabled: false
+    uniform_warmup_epochs: 5
+    optimizer_lr_scale: 0.5
+    weight_decay: 1.0e-4
+    grad_clip_val: 1.0
+    scheduler:
+      type: cosine
+      warmup_epochs: 5
+      min_lr_scale: 1.0e-5
+  gradient_routing:
+    detach_energy_input: false
+  entropy_regularization:
+    enabled: false
+    initial_coefficient: 1.0
+    final_coefficient: 0.1
+
+# Kaba-style approximate SO(3) canonicalization for non-equivariant models.
+learned_canonicalization:
+  enabled: false
+  steps: 3 # 3 # 5
+  step_size: 0.1
+  max_step_angle: 0.25
+  consistency_weight: 0.3
+  consistency_transform:
+    type: random_rotation
+    degrees:
+      - -180.0
+      - 180.0
+    axis: random
+  energy_training:
+    enabled: true
+    uniform_warmup_epochs: 0
+    optimizer_lr_scale: 0.25
+    weight_decay: 1.0e-4
+    grad_clip_val: 1.0
+    scheduler:
+      type: constant
+      warmup_epochs: 5
+      min_lr_scale: 1.0e-5
+
+# Direct, non-equivariant graph-to-rotation canonicalization. This is an
+# ablation, not an equivariant or exact canonicalizer.
+direct_canonicalization:
+  enabled: false
+  consistency:
+    enabled: false
+    weight: 0.0
+    transform:
+      type: random_rotation
+      degrees:
+        - -180.0
+        - 180.0
+      axis: random
+  # Encourage native-pose inputs to retain the identity canonicalization.
+  # The raw MSE is logged whenever direct canonicalization is active.
+  id_bias:
+    enabled: false
+    weight: 0.0
+
+
+profile_training: false
+profiling:
+  report_every_n_steps: 10
+  warmup_steps: 5
+  reset_after_report: true
+  dump_json: true
+  include_validation: false

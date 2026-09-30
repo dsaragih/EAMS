@@ -1,0 +1,12 @@
+_target_: data.features.factory.FeatureFactory
+node_features:
+  - pointwise_area
+  - hks
+  - cartesian_coordinates
+edge_features:
+  # - anatomy_weight
+  - degree_weight
+  - copy_weight
+  - dihedrals
+face_features:
+others:

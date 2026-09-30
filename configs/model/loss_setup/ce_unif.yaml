@@ -1,0 +1,9 @@
+# Teeth: vertex boundary DoU + embedding contrastive loss
+
+loss_dict:
+  pred:
+    _target_: util.losses.CrossEntropyLoss
+    label_smoothing: 0.0
+
+loss_coefficients:
+  pred: 1.0

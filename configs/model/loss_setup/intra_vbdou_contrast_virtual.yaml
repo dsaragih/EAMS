@@ -1,0 +1,11 @@
+# IntrA: vertex classification + embedding contrastive loss
+
+loss_dict:
+  pred: ${losses.vertex_bdou}
+  embedding: ${losses.contrastive_boundary}
+  assignment_matrix: ${losses.regional_assignment}
+
+loss_coefficients:
+  pred: 1.0
+  embedding: 1.0
+  assignment_matrix: 0.1

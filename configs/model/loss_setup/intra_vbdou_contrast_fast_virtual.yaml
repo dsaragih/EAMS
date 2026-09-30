@@ -1,0 +1,11 @@
+# IntrA: vertex classification + embedding contrastive loss + FastEGNN-style virtual-node MMD
+
+loss_dict:
+  pred: ${losses.vertex_bdou}
+  embedding: ${losses.contrastive_boundary}
+  virtual_node_coords: ${losses.virtual_node_mmd}
+
+loss_coefficients:
+  pred: 1.0
+  embedding: 1.0
+  virtual_node_coords: 0.1

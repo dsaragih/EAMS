@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the EAMS paper when using this software."
+title: "Augmented Equivariant Mesh Networks for Anatomical Segmentation"
+authors:
+  - family-names: Saragih
+    given-names: Daniel
+type: software
+license: MIT
+version: 1.0.0
+preferred-citation:
+  type: article
+  title: "Augmented Equivariant Mesh Networks for Anatomical Segmentation"
+  authors:
+    - family-names: Saragih
+      given-names: Daniel
+  year: 2026
+  doi: 10.48550/arXiv.2605.08172
+  url: https://arxiv.org/abs/2605.08172

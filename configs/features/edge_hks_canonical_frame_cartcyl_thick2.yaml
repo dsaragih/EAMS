@@ -1,0 +1,12 @@
+defaults:
+  - edge_hks_canonical_frame_cartcyl.yaml
+
+node_features:
+  - pointwise_area
+  - hks
+  # - wave_signature
+  - canonical_frame_cylindrical
+  - canonical_frame_cartesian
+  - spectral_coordinates
+others:
+  - thickness

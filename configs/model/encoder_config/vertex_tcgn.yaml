@@ -1,0 +1,7 @@
+_target_: models.networks.encoders.baseline.BaselineVertexEncoder
+input_dim: ${resolve_feature_input_dim:${features},node_features}
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+face_aggregate: max
+output_node_embedding: true
+output_face_embedding: true
+virtual_global_node: false

@@ -1,0 +1,47 @@
+# Model configuration (Lightning Module) with Refactored Network
+
+defaults:
+  - base.yaml
+  - _self_
+  - loss_setup: liver_mesh_graph
+  - decoder_config: none
+  - /metrics:
+    - iou
+    - dice
+    - chamfer
+    - hausdorff
+# Uses the cleaned-up, well-documented MeshEncoderDecoderRefactored
+_target_: models.mesh_graph_cnn.MeshClassifierLightning
+
+# Network configuration - Refactored version
+network_config:
+  _target_: models.networks.networks_refactored.MeshEncoderDecoderRefactored
+  pools: [22000, 3200, 1600, 800]
+  down_convs: [5, 16, 32, 64, 128, 128]
+  up_convs: [128, 128, 64, 32, 16, 3]
+  blocks: 2
+  transfer_data: true
+  dgcnn_checkpoint_path: ${paths.dgcnn_checkpoint}
+
+# Losses
+loss_dict: ${.loss_setup.loss_dict}
+loss_coefficients: ${.loss_setup.loss_coefficients}
+batched_input: true
+
+# Metrics
+metrics_dict: ${model.metrics}
+
+# Optimizer
+lr: 0.01
+beta1: 0.9
+
+# Learning rate scheduler
+lr_policy: lambda  # Options: lambda, step, plateau
+lr_decay_iters: 40
+niter: 40
+niter_decay: 160
+
+# Paths
+train_lossweight_dir: ${data.train_lossweight_dir}
+results_dir: ${paths.results_dir}
+classes: ${data.class_labels}

@@ -1,0 +1,61 @@
+_target_: models.networks.encoders.emnn_regional_virtual_nodes.EMNNRegionalVirtualNodes
+use_auxiliary_frame: true
+input_dim: ${resolve_emnn_feature_input_dim:${features},node_features,${.use_auxiliary_frame}}
+edges_input_dim: ${resolve_feature_input_dim:${features},edge_features}
+width: 32
+width_mult:
+  - 1
+  - 2
+  - 4
+  - 4
+num_vector: ${resolve_emnn_num_vector:${features},2,${.use_auxiliary_frame}}
+hier: false
+virtual_global_node: false
+norm_type: stateless_batchnorm
+detect_nan: true
+thickness_scale: 3.0
+thickness_init: 1.0
+pre_norm: true
+use_radial_edge_embedding: true
+conv_attention: false
+normalize_coord_diff: false
+coord_update_tanh: false
+num_regional_virtual_nodes: 16
+regional_assignment_hidden_dim: null
+regional_num_attention_heads: 4
+regional_num_attention_layers: 1
+regional_attention_dropout: 0.1
+regional_transformer_hidden_mult: 2.0
+regional_use_coordinate_features: true
+regional_geometry_feature_mode: raw_coordinates
+regional_geometry_anchor_count: null
+regional_geometry_rbf_bins: 8
+regional_geometry_rbf_sigma: 0.2
+regional_geometry_feature_normalization: max
+regional_use_region_geometry_features: true
+regional_residual_weight: 0.25
+regional_learnable_residual_weight: false
+regional_eps: 1e-6
+regional_only_last_layer: false
+regional_geometry_prior_mode: none
+regional_geometry_coord_source: origin
+regional_geometry_prior_weight: 1.0
+regional_geometry_prior_sigma: 0.2
+regional_geometry_radius: null
+regional_geometry_random_start: false
+regional_geometry_detach_coords: true
+regional_end_stage_mode: flat
+regional_context_pool_ratio: 0.25
+regional_context_pool_radius: 0.2
+regional_context_pool_aggr: mean
+regional_context_max_num_neighbors: 64
+regional_context_random_start: false
+regional_context_use_feature_scores: true
+regional_context_dim: null
+regional_context_num_blocks: 1
+regional_context_fusion: gated
+regional_context_lift_k: 3
+regional_context_fusion_dropout: 0.0
+regional_context_geometry_mode: raw_relative
+regional_context_rbf_bins: 8
+regional_context_rbf_sigma: 0.2

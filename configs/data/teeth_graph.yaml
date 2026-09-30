@@ -1,0 +1,22 @@
+# Data configuration
+_target_: data.teeth_mesh_datamodule.TeethMeshDataModule
+
+# Data splits
+splits_dir: splits/
+
+# Data loading
+batch_size: 8
+num_workers: 4
+serial_batches: false  # Set to true for deterministic ordering
+
+# Aug, Features, pre-transforms
+transforms: ${transforms}
+target_faces: 16000 # expect ~8000 points
+
+nclasses: 17
+# Ignore T18/38 and T28/48 supervision in all stages without changing the model head.
+exclude_sparse_molars: false
+dataroot: ${paths.dataroot}/Teeth3DS  # Main data directory
+class_labels: ${.dataroot}/class_labels.txt
+
+processed_dir: ${.dataroot}/new_processed_all

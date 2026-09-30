@@ -1,0 +1,17 @@
+_target_: models.networks.decoders.edge_position.EdgePositionDecoder
+out_dim: ${data.nclasses}
+output_level: vertex
+edge_aggregate: max
+face_source: auto
+face_reduce: mean
+msg_hidden_dims:
+  - 128
+  - 128
+  - 128
+dist_hidden_dims:
+  - 128
+dist_emb_dim: 16
+activation: silu
+dropout: 0.1
+norm_type: layernorm
+use_layernorm: true

@@ -1,0 +1,10 @@
+defaults:
+  - edge_hks_canonical_frame_cartcyl.yaml
+
+node_features:
+  - pointwise_area
+  - hks
+  - canonical_frame_cylindrical
+  - canonical_frame_cartesian
+others:
+  - thickness

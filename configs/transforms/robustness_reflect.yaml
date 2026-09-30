@@ -1,0 +1,10 @@
+condition_name: reflect_${.test_transforms.0.axis}
+pre_transforms:
+  - normalized_coords
+  - normals
+  - on_manifold_face_info
+train_transforms: []
+val_transforms: []
+test_transforms:
+  - _target_: data.transforms.transforms.ReflectMesh
+    axis: x

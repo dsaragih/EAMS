@@ -1,0 +1,15 @@
+defaults:
+  - vertex_emnn.yaml
+
+hier: true
+scale_updown: 1
+num_pooling_layers: 2
+
+width: 128
+width_mult:
+  - 1
+  - 1
+  - 1
+  - 1
+  
+virtual_global_node: true

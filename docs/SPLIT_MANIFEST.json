@@ -1,0 +1,202 @@
+[
+  {
+    "path": "datasets/All_data/class_labels.txt",
+    "count": 3,
+    "sha256": "6f30dbb6095386b0ba88fc6fc540b19da1c0af68669255dfc7adb1287d100850"
+  },
+  {
+    "path": "datasets/All_data/folds/001/train.txt",
+    "count": 144,
+    "sha256": "7d0687b253adced40a39f6334b7e873ca1d1e71bdf90348b6b3bf8a40d474078"
+  },
+  {
+    "path": "datasets/All_data/folds/001/val.txt",
+    "count": 36,
+    "sha256": "34d46be0eaec3fd4fff17312369922da11232dc5ee9808f25c946ee5032f97f7"
+  },
+  {
+    "path": "datasets/All_data/folds/002/train.txt",
+    "count": 144,
+    "sha256": "c9d075ddd72b351d10368447ae6419a22b11d867f6789db2e3157c9df8b82b64"
+  },
+  {
+    "path": "datasets/All_data/folds/002/val.txt",
+    "count": 36,
+    "sha256": "c0e682b3a2bcceb790d33ee75c6c658bea26448ecbeea83890c10755c65f0e6a"
+  },
+  {
+    "path": "datasets/All_data/folds/003/train.txt",
+    "count": 144,
+    "sha256": "f9f3c73161a3689c78e3c9c39859d1d8b5da2132ee7db401e0e8364703e472db"
+  },
+  {
+    "path": "datasets/All_data/folds/003/val.txt",
+    "count": 36,
+    "sha256": "dff1ccf056b1af4c5ad657f394eff1e88ac26cadc66aab8ea9994ed9f128f6b7"
+  },
+  {
+    "path": "datasets/All_data/folds/004/train.txt",
+    "count": 144,
+    "sha256": "2c757c4c85e823b7266314dd39b1273b826d4623460cc8693e4462740435804f"
+  },
+  {
+    "path": "datasets/All_data/folds/004/val.txt",
+    "count": 36,
+    "sha256": "4c6c88ea6e628f534cee1ffa177a2a95f4b7a5a4c0b2b8b8f780bd5cfbebc13b"
+  },
+  {
+    "path": "datasets/All_data/folds/005/train.txt",
+    "count": 144,
+    "sha256": "4ffc68a0a912bbaef2aa5552c10a87f66a20285107152303a3f0d65ca7a33380"
+  },
+  {
+    "path": "datasets/All_data/folds/005/val.txt",
+    "count": 36,
+    "sha256": "42731ffa58bbc825c8d33a7a221e6c9a0c424fb4021b4e5a6c2b6f4da0c1442e"
+  },
+  {
+    "path": "datasets/All_data/folds/test.txt",
+    "count": 20,
+    "sha256": "20505ac8114a7367343cdc39020499e39ffd8702d5406017938140a16be6a3c6"
+  },
+  {
+    "path": "datasets/IOSSeg/class_labels.txt",
+    "count": 17,
+    "sha256": "09b37feb4f6ec8868055df207a0cad877135776fefd6594d459c84c93cf47123"
+  },
+  {
+    "path": "datasets/IOSSeg/class_labels_legacy.txt",
+    "count": 17,
+    "sha256": "db62b3f0ab2860432e6a24227557e3efb33db89220acb0a0992565f99d42c6e8"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/001/train_ids.txt",
+    "count": 110,
+    "sha256": "127a87a0ad713c10fee33174e3e1bcce7c05b6f227eb95857f112e63664f09f1"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/001/val_ids.txt",
+    "count": 10,
+    "sha256": "914748f71dd70e7ab0748839ebc499ab111fc0d49f2a88369ae4e8231abaa443"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/002/train_ids.txt",
+    "count": 110,
+    "sha256": "99270978f20f3874ca72fab2c774947db754fa3bba99b15472c48aaa3f754fe0"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/002/val_ids.txt",
+    "count": 10,
+    "sha256": "507acf0dfa3753f39c8d85433dfa0b1b9d96a46c5357acc54242d17602f03922"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/003/train_ids.txt",
+    "count": 110,
+    "sha256": "2463a53f14162654a831126cdfe778e20e8b904bfe7720b1abee6dbf8f71957c"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/003/val_ids.txt",
+    "count": 10,
+    "sha256": "0dbcf86e57d8a3fdad15e2ba7ebb08c6277c85bc47b892a3262ff1a452647496"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/004/train_ids.txt",
+    "count": 110,
+    "sha256": "ce9ff6f4de9a24847f39f6b93f338e211ba7011ed4c0471542d6fb6f355ba70d"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/004/val_ids.txt",
+    "count": 10,
+    "sha256": "3f05bff30f8df2962112a3295eebc39de57f49589f5ffb8b65e0201c3cee1e64"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/005/train_ids.txt",
+    "count": 110,
+    "sha256": "b8f66ad5b827284f0d2abf51b8a81fc877a7ac73550b271738f9a6166a395cad"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/005/val_ids.txt",
+    "count": 10,
+    "sha256": "d7f7656264fd40ea96c133049bab9dbc1a067782eed90d7857bfa737dcee9066"
+  },
+  {
+    "path": "datasets/IOSSeg/splits/test_ids.txt",
+    "count": 59,
+    "sha256": "7741bc67d71a4d0fc1d705100fd443d02afe2a9f6bab6f7b5f057ab2f0ba5ddf"
+  },
+  {
+    "path": "datasets/Teeth3DS/class_labels.txt",
+    "count": 17,
+    "sha256": "09b37feb4f6ec8868055df207a0cad877135776fefd6594d459c84c93cf47123"
+  },
+  {
+    "path": "datasets/Teeth3DS/splits/test_ids.txt",
+    "count": 600,
+    "sha256": "130c4b3c0666c56aafee9b07cb5b4630ac7eed09717f1ee2fa75f0cadb4d6bc8"
+  },
+  {
+    "path": "datasets/Teeth3DS/splits/train_ids.txt",
+    "count": 1080,
+    "sha256": "b448c68e908925ab7249d834ef225bfe6155ae94f1563ee7beb967963cb1087f"
+  },
+  {
+    "path": "datasets/Teeth3DS/splits/val_ids.txt",
+    "count": 120,
+    "sha256": "aa1e7c8042aa64d8e70bf26ff7b62f5672586977d90d130ac3f4380691a7f82b"
+  },
+  {
+    "path": "datasets/aneurysm_seg/class_labels.txt",
+    "count": 2,
+    "sha256": "c49d8267d80871c98b047c43acdf9557a8f57fbf1091384a2b4ce9e0bf92da2d"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/001/train.txt",
+    "count": 93,
+    "sha256": "81178224cc9d729d08dae1263aaf93e70901257bf943e8d6555eb6651cbb2c72"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/001/val.txt",
+    "count": 23,
+    "sha256": "47d5f7b8d827e2f909c77cd471c70b8901dc324ef84239a566faf83e60896d66"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/002/train.txt",
+    "count": 93,
+    "sha256": "8ccabff8a66e652c071ccd5f552d9399e1e864db13518b54320d132747f83300"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/002/val.txt",
+    "count": 23,
+    "sha256": "dd730511d743eccd5107f0b8ed60a621ec8a8e914dddeda33218418df6ade80d"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/003/train.txt",
+    "count": 93,
+    "sha256": "9230cf24321a0ec15b6e07d0eee9c492763e0efec9309bb9677c606fc823a963"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/003/val.txt",
+    "count": 23,
+    "sha256": "be5f0f6041b4c05dda5b3e067060628b940f231623922a1f215a2f6ae72359f1"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/004/train.txt",
+    "count": 93,
+    "sha256": "5a259be25bb3124e06252c08e2316639a8595cdf8abdbe17ca404947a992b688"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/004/val.txt",
+    "count": 23,
+    "sha256": "696dae1191800ae9bcf58f6a38ac846119e6aea65562f9ba95dd9b142b66c9be"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/005/train.txt",
+    "count": 92,
+    "sha256": "14aa5febb6a8b89eb14955510f8fc146bfcb27dd652ec582ccffd79a90c41169"
+  },
+  {
+    "path": "datasets/aneurysm_seg/folds/005/val.txt",
+    "count": 24,
+    "sha256": "d3ad371a49d0d58943f8450d4b17ab173ae752d087198c3fcd7c370985398948"
+  }
+]
